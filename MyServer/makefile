@@ -1,3 +1,5 @@
+all: server
+
 server: mainServer.o myserver.o myconnection.o
 	cp ../MyInput/input.json ./static/
 	cp ../MyInput/input.json ./shared/
@@ -13,3 +15,8 @@ myconnection.o: myconnection.cpp
 	
 mainServer.o: mainServer.cpp
 	g++ -c mainServer.cpp -o ./obj/mainServer.o
+	
+clean:
+	rm -f ./obj/*.*
+	rm -f ./shared/*.*
+	rm -f ./static/*.*

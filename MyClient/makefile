@@ -1,3 +1,5 @@
+all:client
+
 client: mainClient.o myclient.o
 	cp ../MyInput/input.json ./static/
 	cp ../MyInput/input.json ./shared/
@@ -10,3 +12,8 @@ myclient.o: myclient.cpp
 	
 mainClient.o: mainClient.cpp
 	g++ -c mainClient.cpp -o ./obj/mainClient.o
+	
+clean:
+	rm -f ./obj/*.*
+	rm -f ./shared/*.*
+	rm -f ./static/*.*
