@@ -1,4 +1,4 @@
-all:
+all: clean	
 	$(MAKE) -C MyInput
 	$(MAKE) -C MyClient	
 	$(MAKE) -C MyServer
